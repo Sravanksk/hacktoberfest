@@ -10,7 +10,9 @@ class ImageOnScroll extends Component< ImageOnScrollProps, ImageOnScrollState > 
 
     constructor() {
         super();
-        setTimeout(() => watchViewport(this.updateValues), 5000)
+        setTimeout(() => watchViewport(this.updateValues), 100);
+
+        this.updateValues = this.updateValues.bind(this);
     }
 
 
@@ -108,6 +110,8 @@ class ImageOnScroll extends Component< ImageOnScrollProps, ImageOnScrollState > 
     }
 
     updateValues({ size, scroll, mouse, orientation }) {
+        console.log(this);
+        
         if (size.changed) {
             // console.log("size");
             // console.log(size);
