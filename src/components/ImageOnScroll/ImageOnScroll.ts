@@ -10,7 +10,7 @@ class ImageOnScroll extends Component< ImageOnScrollProps, ImageOnScrollState > 
 
     constructor() {
         super();
-        watchViewport(this.updateValues);
+        setTimeout(() => watchViewport(this.updateValues), 5000)
     }
 
 
