@@ -15,6 +15,10 @@ class ImageOnScroll extends Component< ImageOnScrollProps, ImageOnScrollState > 
         this.updateValues = this.updateValues.bind(this);
     }
 
+    public connectedCallback() {
+       this.accordion = this.shadowRoot.querySelector("#accordion");
+    }
+
 
 
     static componentName = 'image-on-scroll';
@@ -29,9 +33,7 @@ class ImageOnScroll extends Component< ImageOnScrollProps, ImageOnScrollState > 
 
     private stretchHeight = this.openHeight-this.closedHeight;
     private stretchWidth = this.openWidth-this.closedWidth;
-
-    private body = document.getElementsByTagName("body")[0];
-    private accordion = document.getElementById("accordion");
+    private accordion;
 
 
     private mouseX = 0;
@@ -63,8 +65,7 @@ class ImageOnScroll extends Component< ImageOnScrollProps, ImageOnScrollState > 
     }
 
     viewportScroll() {
-        this.body.style.height = (this.headerHeight + 2*this.openHeight - this.closedHeight) + "px";
-
+        this.style.height = (this.headerHeight + 2*this.openHeight - this.closedHeight) + "px";
         let currentWidth = this.openWidth;
         this.accordion.style.position = "absolute";
         this.accordion.style.top = '0';
@@ -103,15 +104,11 @@ class ImageOnScroll extends Component< ImageOnScrollProps, ImageOnScrollState > 
             this.accordion.style.width = this.openWidth + "px";
             this.accordion.style.height = this.openHeight + "px";
         }
-
-
-
         let productList = document.getElementById("productList");
     }
 
     updateValues({ size, scroll, mouse, orientation }) {
-        console.log(this);
-        
+
         if (size.changed) {
             // console.log("size");
             // console.log(size);
@@ -122,8 +119,8 @@ class ImageOnScroll extends Component< ImageOnScrollProps, ImageOnScrollState > 
         }
 
         if (scroll.changed) {
-            // console.log("scroll");
-            // console.log(scroll);
+            console.log("scroll");
+            console.log(scroll);
             this.scrollTop = scroll.top;
             this.scrollBottom = scroll.bottom;
             this.viewportScroll();

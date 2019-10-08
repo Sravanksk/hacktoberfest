@@ -1,26 +1,21 @@
 @import "node_modules/@biotope/element/lib/host.mixin";
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans&display=swap');
 
 @include host('image-on-scroll') {
-  @import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans&display=swap');
 
-  :root {
-    --darkgreen: #0C3B39;
-    --white: #F5F4F0;
-    --orange: #E4572E;
-    --lightgreen: #79B59D;
-    --yellow: #FABB3E;
-  }
+  $darkgreen: #0C3B39;
+  $white: #F5F4F0;
+  $lightgreen: #79B59D;
+  $yellow: #FABB3E;
 
-  body{
-    color: var(--darkgreen);
-    background-color: var(--orange);
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1em;
-  }
+  display: block;
+  color: $darkgreen;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+
 
   ul {
     display: grid;
-    background-color: var(--orange);
     margin: auto;
     width: 400px;
     height: 400px;
@@ -33,6 +28,7 @@
     grid-template-columns:
       1fr 100px 1fr 100px 1fr 100px 1fr 100px;
     transition: height 0.2s;
+    list-style: none;
   }
 
   li {
@@ -78,51 +74,51 @@
   }
 
   .desc.yellow div {
-    background-color: var(--yellow);
-    color: var(--darkgreen);
+    background-color: $yellow;
+    color: $darkgreen;
   }
   .desc.yellow div a{
-    color: var(--darkgreen);
+    color: $darkgreen;
     text-decoration: none;
   }
   .desc.white div{
-    background-color: var(--white);
-    color: var(--darkgreen);
+    background-color: $white;
+    color: $darkgreen;
   }
   .desc.white div a{
-    color: var(--darkgreen);
+    color: $darkgreen;
     text-decoration: none;
   }
   .desc.lightgreen div{
-    background-color: var(--lightgreen);
-    color: var(--white);
+    background-color: $lightgreen;
+    color: $white;
   }
   .desc.lightgreen div a{
-    color: var(--white);
+    color: $white;
     text-decoration: none;
   }
   .desc.darkgreen div{
-    background-color: var(--darkgreen);
-    color: var(--white);
+    background-color: $darkgreen;
+    color: $white;
   }
   .desc.darkgreen div a{
-    color: var(--white);
+    color: $white;
     text-decoration: none;
   }
   .thumb.yellow div{
-    box-shadow: inset 0 0 0 8px var(--yellow);
+    box-shadow: inset 0 0 0 8px $yellow;
   }
 
   .thumb.white div{
-    box-shadow: inset 0 0 0 8px var(--white);
+    box-shadow: inset 0 0 0 8px $white;
   }
 
   .thumb.lightgreen div{
-    box-shadow: inset 0 0 0 8px var(--lightgreen);
+    box-shadow: inset 0 0 0 8px $lightgreen;
   }
 
   .thumb.darkgreen div{
-    box-shadow: inset 0 0 0 8px var(--darkgreen);
+    box-shadow: inset 0 0 0 8px $darkgreen;
   }
 
   .thumb>div>img{
@@ -140,43 +136,43 @@
   }
 
   li:nth-child(-n+2) div{
-    background-color: var(--yellow);
-    color: var(--darkgreen);
+    background-color: $yellow;
+    color: $darkgreen;
   }
 
   li:nth-child(n+3):nth-child(-n+4) div{
-    background-color: var(--white);
-    color: var(--darkgreen);
+    background-color: $white;
+    color: $darkgreen;
   }
 
   li:nth-child(n+5):nth-child(-n+6) div, li:nth-child(n+9):nth-child(-n+10) div{
-    background-color: var(--lightgreen);
-    color: var(--white);
+    background-color: $lightgreen;
+    color: $white;
   }
 
   li:nth-child(n+7):nth-child(-n+8) div, li:nth-child(n+11):nth-child(-n+12) div{
-    background-color: var(--darkgreen);
-    color: var(--yellow);
+    background-color: $darkgreen;
+    color: $yellow;
   }
 
   li:nth-child(n+13):nth-child(-n+14) svg{
-    background-color: var(--white);
-    fill: var(--lightgreen);
+    background-color: $white;
+    fill: $lightgreen;
   }
 
   li:nth-child(n+15):nth-child(-n+16) svg{
-    background-color: var(--darkgreen);
-    fill: var(--yellow);
+    background-color: $darkgreen;
+    fill: $yellow;
   }
 
   li:nth-child(n+17):nth-child(-n+18) svg{
-    background-color: var(--darkgreen);
-    fill: var(--white);
+    background-color: $darkgreen;
+    fill: $white;
   }
 
   li:nth-child(n+19):nth-child(-n+20) svg{
-    background-color: var(--darkgreen);
-    fill: var(--yellow);
+    background-color: $darkgreen;
+    fill: $yellow;
   }
 
 
